@@ -2,10 +2,11 @@
 
 # Weather Scraper
 
-> This weather scraper formats important weather forecast information for any needed city 
+> This weather scraper formats important weather forecast information for any needed city.
 
 ![screenshot](./app_screenshot.png)
 
+This Weather Scraper used [12 Day Weather Forecast Worldwide](https://www.weather-forecast.com/) as the base website for the scraping. When the program is run it prompts the user to put in a desired city whose weather forecast they wish to retrieve
 Additional description about the project and its features.
 
 ## Built With

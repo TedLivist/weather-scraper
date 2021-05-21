@@ -3,7 +3,7 @@ require 'nokogiri'
 require 'byebug'
 
 def my_scraper
-  url = "https://www.weather-forecast.com/locations/Lagos/forecasts/latest"
+  url = "https://www.weather-forecast.com/locations/Abuja/forecasts/latest"
   unparsed_page = HTTParty.get(url)
   parsed_page = Nokogiri::HTML(unparsed_page)
   weathers = Array.new
@@ -42,18 +42,27 @@ def my_scraper
   puts parsed_page.css('h3.nearest-other-header').text << "\n"
   for i in near_paris_cities_data do
     puts "#{near_paris_table_header[0].text}: #{i.text}"
-    puts "#{near_paris_table_header[1].text}: #{the_cities_data[s].text}"
-    puts "#{near_paris_table_header[2].text}: #{the_cities_data[s + 1].text}"
-    puts "#{near_paris_table_header[3].text}: #{the_cities_data[s + 2].text}"
-    puts "#{near_paris_table_header[4].text}: #{the_cities_data[s + 3].text}"
-    s += 4
+    for x in near_paris_table_header[1..-1] do
+       puts "#{x.text}: #{the_cities_data[s].text}"
+       s += 1
+    end
+    # puts "#{near_paris_table_header[1].text}: #{the_cities_data[s].text}"
+    # puts "#{near_paris_table_header[2].text}: #{the_cities_data[s + 1].text}"
+    # puts "#{near_paris_table_header[3].text}: #{the_cities_data[s + 2].text}"
+    # puts "#{near_paris_table_header[4].text}: #{the_cities_data[s + 3].text}"
     puts "\n"
   end
+
+
+
   # puts near_paris_cities_data[c_n_p].text
   # the_cities_data[s..e].each do |x|
   #   puts x.text
   # end
   # byebug
+
+
+
 
 end
 

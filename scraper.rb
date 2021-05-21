@@ -3,9 +3,7 @@ require 'nokogiri'
 require 'byebug'
 
 def my_scraper
-  url = "https://www.weather-forecast.com/locations/Abuja/forecasts/latest"
-  unparsed_page = HTTParty.get(url)
-  parsed_page = Nokogiri::HTML(unparsed_page)
+  
   weathers = Array.new
   paris_weathers = parsed_page.css('td.b-forecast__table-description-cell--js')
   paris_weathers.each do |paris_weather|

@@ -9,4 +9,13 @@ describe LocationWeather do
       end
     end
   end
+
+  describe "#some_location" do
+    context "when run" do
+      it "adds items to array" do
+        new_instance = LocationWeather.new('Ikeja')
+        expect(new_instance.weathers.count).to eql(0)
+      end
+    end
+  end
 end

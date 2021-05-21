@@ -8,16 +8,15 @@ class LocationWeather
   end
 
   def some_location
-    paris_weathers = @requested_weather.parsed_page.css('td.b-forecast__table-description-cell--js')
-    paris_weathers.each do |paris_weather|
+    city_weathers = @requested_weather.parsed_page.css('td.b-forecast__table-description-cell--js')
+    the_city_weathers.each do |the_city_weather|
       weather = {
-        weather_title: paris_weather.css('div.b-forecast__table-description-title').text,
-        weather_description: paris_weather.css('span.phrase').text
+        weather_title: the_city_weather.css('div.b-forecast__table-description-title').text,
+        weather_description: the_city_weather.css('span.phrase').text
       }
       weathers << weather
     end
   end
 end
 
-new_inst = LocationWeather.new('Lagos')
-puts new_inst.requested_weather.is_a?(Parsers)
+new_inst = LocationWeather.new("Abuja")

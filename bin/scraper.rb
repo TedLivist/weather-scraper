@@ -13,13 +13,16 @@ def my_scraper
   end
   city_weather = LocationWeather.new(the_city)
 
+  city_weather.some_location # This is run so that an array of weather forecasts can be created
+
   # Weather Forecast for requested location
-  city_weather.some_location
   puts "    " + city_weather.requested_weather.parsed_page.css('span.show-for-medium-up').text + "\n"
   for i in city_weather.weathers do
     puts "\n"
     puts i[:weather_title] + "\n" + i[:weather_description]
   end
+
+  byebug
 
   # Weather Forecast for cities near requested location
   nearby_cities = CitiesNearLocation.new(the_city)

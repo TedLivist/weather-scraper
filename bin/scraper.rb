@@ -12,18 +12,19 @@ def my_scraper
     retry
   end
   city_weather = LocationWeather.new(the_city)
+  nearby_cities = CitiesNearLocation.new(the_city)
 
   city_weather.some_location # This is run so that an array of weather forecasts can be created
 
   # Weather Forecast for requested location
-  puts "    " + city_weather.requested_weather.parsed_page.css('span.show-for-medium-up').text + "\n"
+  puts ""
+  puts "\t\t" + city_weather.requested_weather.parsed_page.css('span.show-for-medium-up').text + "\n"
   for i in city_weather.weathers do
     puts "\n"
     puts i[:weather_title] + "\n" + i[:weather_description]
   end
 
   # Weather Forecast for cities near requested location
-  nearby_cities = CitiesNearLocation.new(the_city)
   s = 0
   puts nearby_cities.other_cities_parse.parsed_page.css('h3.nearest-other-header').text << "\n"
   for i in nearby_cities.other_cities_name do

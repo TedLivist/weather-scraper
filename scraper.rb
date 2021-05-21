@@ -1,5 +1,6 @@
 require_relative './lib/parsers.rb'
 require_relative './lib/location_weather.rb'
+require_relative './lib/cities_near_location.rb'
 
 def my_scraper
   the_city = gets.chomp
@@ -14,29 +15,27 @@ def my_scraper
   #   }
   #   main_weather.weathers << weather
   # end
+
+  # Weather Forecast for requested location
   main_weather.some_location
 
-  puts "    " + the_parse.parsed_page.css('span.show-for-medium-up').text + "\n"
+  puts "    " + main_weather.requested_weather.parsed_page.css('span.show-for-medium-up').text + "\n"
   for i in main_weather.weathers do
     puts "\n"
     puts i[:weather_title] + "\n" + i[:weather_description]
   end
 
-  near_paris_table_header = the_parse.parsed_page.css('table.other_places.guide th')
-  near_paris_cities_data = the_parse.parsed_page.css('table.other_places.guide tr td b')
-  for i in near_paris_table_header do
-    puts i.text
-  end
-  the_cities_data = the_parse.parsed_page.css('table.other_places tr td span.phrase')
-  
+
+  # Weather Forecast for cities near requested location
+  nearby_cities = CitiesNearLocation.new(the_city)
   s = 0
 
   # Weather forecast for places near #{Paris}
-  puts the_parse.parsed_page.css('h3.nearest-other-header').text << "\n"
-  for i in near_paris_cities_data do
-    puts "#{near_paris_table_header[0].text}: #{i.text}"
-    for x in near_paris_table_header[1..-1] do
-       puts "#{x.text}: #{the_cities_data[s].text}"
+  puts nearby_cities.other_cities_parse.parsed_page.css('h3.nearest-other-header').text << "\n"
+  for i in nearby_cities.other_cities_name do
+    puts "#{nearby_cities.other_cities_table_header[0].text}: #{i.text}"
+    for x in nearby_cities.other_cities_table_header[1..-1] do
+       puts "#{x.text}: #{nearby_cities.other_cities_weather_data[s].text}"
        s += 1
     end
     puts "\n"

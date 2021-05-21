@@ -1,7 +1,7 @@
 require_relative './parsers.rb'
 
 class LocationWeather
-  attr_reader :weathers
+  attr_reader :weathers, :requested_weather
   def initialize(city)
     @weathers = Array.new
     @requested_weather = Parsers.new(city)

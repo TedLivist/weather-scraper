@@ -15,7 +15,13 @@ def my_scraper
     }
     weathers << weather
   end
+
+  near_paris_table_header = parsed_page.css('table.other_places.guide th')
+  near_paris_table_header.each do |near_paris_location_header|
+    puts "| #{near_paris_location_header.text} |"
+  end
   byebug
+
 end
 
 my_scraper

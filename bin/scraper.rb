@@ -22,8 +22,6 @@ def my_scraper
     puts i[:weather_title] + "\n" + i[:weather_description]
   end
 
-  byebug
-
   # Weather Forecast for cities near requested location
   nearby_cities = CitiesNearLocation.new(the_city)
   s = 0

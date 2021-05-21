@@ -8,7 +8,7 @@ class LocationWeather
   end
 
   def some_location
-    city_weathers = @requested_weather.parsed_page.css('td.b-forecast__table-description-cell--js')
+    the_city_weathers = @requested_weather.parsed_page.css('td.b-forecast__table-description-cell--js')
     the_city_weathers.each do |the_city_weather|
       weather = {
         weather_title: the_city_weather.css('div.b-forecast__table-description-title').text,

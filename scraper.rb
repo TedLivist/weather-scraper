@@ -20,6 +20,9 @@ def my_scraper
   near_paris_table_header.each do |near_paris_location_header|
     puts "| #{near_paris_location_header.text} |"
   end
+  
+  # near_paris_cities_data = parsed_page.css('table.other_places.guide td b')
+  # print near_paris_cities_data
   byebug
 
 end

@@ -20,6 +20,7 @@ def my_scraper
   # near_paris_table_header.each do |near_paris_location_header|
   #   puts "| #{near_paris_location_header.text} |"
   # end
+  puts near_paris_table_header.count
   
   near_paris_cities_data = parsed_page.css('table.other_places.guide tr td b')
   the_cities_data = parsed_page.css('table.other_places tr td span.phrase')
@@ -27,8 +28,9 @@ def my_scraper
   c_n_p = 1
   s = 0
   e = 3
+  
   for i in near_paris_cities_data do
-    puts i.text
+    puts "#{near_paris_table_header[0].text} : #{i.text}"
     the_cities_data[s..e].each do |x|
       puts x.text
     end

@@ -23,8 +23,10 @@ def my_scraper
   end
 
   near_paris_table_header = the_parse.parsed_page.css('table.other_places.guide th')
-  
   near_paris_cities_data = the_parse.parsed_page.css('table.other_places.guide tr td b')
+  for i in near_paris_table_header do
+    puts i.text
+  end
   the_cities_data = the_parse.parsed_page.css('table.other_places tr td span.phrase')
   
   s = 0

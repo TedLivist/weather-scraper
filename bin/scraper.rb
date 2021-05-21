@@ -1,6 +1,6 @@
-require_relative './lib/parsers.rb'
-require_relative './lib/location_weather.rb'
-require_relative './lib/cities_near_location.rb'
+require_relative '../lib/parsers.rb'
+require_relative '../lib/location_weather.rb'
+require_relative '../lib/cities_near_location.rb'
 
 def my_scraper
   begin

@@ -12,7 +12,7 @@ describe CitiesNearLocation do
     end
 
     it "weather data of cities cannot be zero" do
-      expect(new_instance.other_cities_weather_data).to eql(4)
+      expect(new_instance.other_cities_weather_data.count).to eql(20)
     end
   end
 end

@@ -17,13 +17,29 @@ def my_scraper
   end
 
   near_paris_table_header = parsed_page.css('table.other_places.guide th')
-  near_paris_table_header.each do |near_paris_location_header|
-    puts "| #{near_paris_location_header.text} |"
-  end
+  # near_paris_table_header.each do |near_paris_location_header|
+  #   puts "| #{near_paris_location_header.text} |"
+  # end
   
-  # near_paris_cities_data = parsed_page.css('table.other_places.guide td b')
-  # print near_paris_cities_data
-  byebug
+  near_paris_cities_data = parsed_page.css('table.other_places.guide tr td b')
+  the_cities_data = parsed_page.css('table.other_places tr td span.phrase')
+  # print the_cities_data
+  c_n_p = 1
+  s = 0
+  e = 3
+  for i in near_paris_cities_data do
+    puts i.text
+    the_cities_data[s..e].each do |x|
+      puts x.text
+    end
+    s += 4
+    e += 4
+  end
+  # puts near_paris_cities_data[c_n_p].text
+  # the_cities_data[s..e].each do |x|
+  #   puts x.text
+  # end
+  # byebug
 
 end
 

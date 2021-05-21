@@ -20,7 +20,7 @@ def my_scraper
 
   # Weather Forecast for requested location
   puts ''
-  puts "\t\t #{city_weather.requested_weather.parsed_page.css('span.show-for-medium-up').text}\n"
+  puts "\t#{city_weather.requested_weather.parsed_page.css('span.show-for-medium-up').text}\n"
   city_weather.weathers.each do |i|
     puts "\n"
     puts "#{i[:weather_title]}\n#{i[:weather_description]}"

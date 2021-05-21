@@ -14,7 +14,7 @@ def my_scraper
   city_weather = LocationWeather.new(the_city)
   nearby_cities = CitiesNearLocation.new(the_city)
 
-  city_weather.some_location # This is run so that an array of weather forecasts can be created
+  city_weather.add_city_weather # This is run so that an array of weather forecasts can be created
 
   # Weather Forecast for requested location
   puts ""

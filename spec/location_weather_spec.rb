@@ -13,7 +13,7 @@ describe LocationWeather do
   describe "#some_location" do
     context "when run" do
       it "adds items to array" do
-        new_instance.some_location
+        new_instance.add_city_weather
         expect(new_instance.weathers.count).to eql(4)
       end
     end

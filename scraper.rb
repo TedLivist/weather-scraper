@@ -12,19 +12,19 @@ def my_scraper
     weathers << weather
   end
 
-  puts "    " + parsed_page.css('span.show-for-medium-up').text + "\n"
+  puts "    " + the_parse.parsed_page.css('span.show-for-medium-up').text + "\n"
   for i in weathers do
     puts "\n"
     puts i[:weather_title] + "\n" + i[:weather_description]
   end
 
-  near_paris_table_header = parsed_page.css('table.other_places.guide th')
+  near_paris_table_header = the_parse.parsed_page.css('table.other_places.guide th')
   # near_paris_table_header.each do |near_paris_location_header|
   #   puts "| #{near_paris_location_header.text} |"
   # end
   
-  near_paris_cities_data = parsed_page.css('table.other_places.guide tr td b')
-  the_cities_data = parsed_page.css('table.other_places tr td span.phrase')
+  near_paris_cities_data = the_parse.parsed_page.css('table.other_places.guide tr td b')
+  the_cities_data = the_parse.parsed_page.css('table.other_places tr td span.phrase')
   # print the_cities_data
   c_n_p = 1
   s = 0
@@ -35,7 +35,7 @@ def my_scraper
 
 
   # Weather forecast for places near #{Paris}
-  puts parsed_page.css('h3.nearest-other-header').text << "\n"
+  puts the_parse.parsed_page.css('h3.nearest-other-header').text << "\n"
   for i in near_paris_cities_data do
     puts "#{near_paris_table_header[0].text}: #{i.text}"
     for x in near_paris_table_header[1..-1] do

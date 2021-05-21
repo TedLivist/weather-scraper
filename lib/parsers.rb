@@ -1,10 +1,15 @@
+require 'httparty'
+require 'nokogiri'
+require 'byebug'
+
 class Parsers
 
-  def initialize(url)
-    @url = url
+  attr_reader :parsed_page, :url, :unparsed_page
+
+  def initialize(city)
+    @url = "https://www.weather-forecast.com/locations/#{city}/forecasts/latest"
+    @unparsed_page = HTTParty.get(@url)
+    @parsed_page = Nokogiri::HTML(@unparsed_page)
   end
 
-  url = "https://www.weather-forecast.com/locations/Abuja/forecasts/latest"
-  unparsed_page = HTTParty.get(url)
-  parsed_page = Nokogiri::HTML(unparsed_page)
 end

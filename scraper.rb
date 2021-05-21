@@ -28,14 +28,19 @@ def my_scraper
   c_n_p = 1
   s = 0
   e = 3
-  
+  near_paris_table_header[1..-1].each do |i|
+    puts i.text
+  end
+  # near_paris_table_header[second..last].each do |i|
+  #   puts i.text
+  # end
   for i in near_paris_cities_data do
-    puts "#{near_paris_table_header[0].text} : #{i.text}"
-    the_cities_data[s..e].each do |x|
-      puts x.text
-    end
+    puts "#{near_paris_table_header[0].text}: #{i.text}"
+    puts "#{near_paris_table_header[1].text}: #{the_cities_data[s].text}"
+    puts "#{near_paris_table_header[2].text}: #{the_cities_data[s + 1].text}"
+    puts "#{near_paris_table_header[3].text}: #{the_cities_data[s + 2].text}"
+    puts "#{near_paris_table_header[4].text}: #{the_cities_data[s + 3].text}"
     s += 4
-    e += 4
   end
   # puts near_paris_cities_data[c_n_p].text
   # the_cities_data[s..e].each do |x|

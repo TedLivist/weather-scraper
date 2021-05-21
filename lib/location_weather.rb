@@ -18,3 +18,6 @@ class LocationWeather
     end
   end
 end
+
+new_inst = LocationWeather.new('Lagos')
+puts new_inst.requested_weather.is_a?(Parsers)

@@ -18,5 +18,3 @@ class LocationWeather
     end
   end
 end
-
-new_inst = LocationWeather.new("Abuja")

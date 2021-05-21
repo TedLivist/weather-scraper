@@ -1,7 +1,6 @@
-require_relative './parsers.rb'
+require_relative './parsers'
 
 class CitiesNearLocation
-
   attr_reader :other_cities_table_header, :other_cities_weather_data, :other_cities_name, :other_cities_parse
 
   def initialize(city)

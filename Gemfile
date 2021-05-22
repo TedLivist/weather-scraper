@@ -1,6 +1,4 @@
-# rubocop: disable Style/FrozenStringLiteralComment, Layout/EndOfLine
-
-# frozen_string_literal: true
+# rubocop: disable Layout/EndOfLine
 
 source 'https://rubygems.org'
 
@@ -12,4 +10,4 @@ gem 'nokogiri'
 
 gem 'rubocop', '>= 1.0', '< 2.0'
 
-# rubocop: enable Style/FrozenStringLiteralComment, Layout/EndOfLine
+# rubocop: enable Layout/EndOfLine

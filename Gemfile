@@ -1,3 +1,4 @@
+# rubocop: disable Lint/RedundantCopDisableDirective
 # rubocop: disable Layout/EndOfLine
 
 source 'https://rubygems.org'
@@ -10,4 +11,5 @@ gem 'nokogiri'
 
 gem 'rubocop', '>= 1.0', '< 2.0'
 
+# rubocop: enable Lint/RedundantCopDisableDirective
 # rubocop: enable Layout/EndOfLine

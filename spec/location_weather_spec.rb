@@ -4,13 +4,13 @@ describe LocationWeather do
   new_instance = LocationWeather.new('Lagos')
   describe '#initialize' do
     context 'when instantiated' do
-      it 'also creates an instance of Parsers class' do
-        expect(new_instance.requested_weather).to be_an_instance_of Parsers
+      it 'instance class inherits from Parsers class' do
+        expect(new_instance.class).to be < Parsers
       end
     end
   end
 
-  describe '#some_location' do
+  describe '#add_city_weather' do
     context 'when run' do
       it 'adds items to array' do
         new_instance.add_city_weather

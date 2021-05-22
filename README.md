@@ -52,8 +52,8 @@ While still on the terminal and in the weather-scraper directory
 
 ### Usage
 - Type `ruby bin/scraper.rb` in the terminal to run this weather scraper program
-- Type in the name of city you wish to fetch. <b>Note: if city name contains space use hyphen(-) to in place of space</b>
-- Give the program a few seconds some time to fetch the data
+- Type in the name of city you wish to fetch. <b>Note: if city name contains space use hyphen(-) in place of space</b>
+- Give the program a few seconds to fetch the data
 - The first heading contains weather forecast data for your requested city
 - The next heading contains weather forecast for cities near your requested city
 - If you do not request a meaningful city, the program would not return anything

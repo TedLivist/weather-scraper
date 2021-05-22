@@ -20,7 +20,7 @@ def my_scraper
 
   # Weather Forecast for requested location
   puts ''
-  puts "\t#{city_weather.requested_weather.parsed_page.css('span.show-for-medium-up').text}\n"
+  puts "\t#{city_weather.parsed_page.css('span.show-for-medium-up').text}\n"
   city_weather.weathers.each do |i|
     puts "\n"
     puts "#{i[:weather_title]}\n#{i[:weather_description]}"
@@ -28,7 +28,7 @@ def my_scraper
 
   # Weather Forecast for cities near requested location
   s = 0
-  puts nearby_cities.other_cities_parse.parsed_page.css('h3.nearest-other-header').text << "\n"
+  puts nearby_cities.parsed_page.css('h3.nearest-other-header').text << "\n"
   nearby_cities.other_cities_name.each do |i|
     puts "#{nearby_cities.other_cities_table_header[0].text}: #{i.text}"
     nearby_cities.other_cities_table_header[1..-1].each do |x|

@@ -45,10 +45,7 @@ Clone this repository on to your local PC
 
 ### Install
 While still on the terminal and in the weather-scraper directory
-- Run the `bundle install command`
-- Type `gem install httparty` to install HTTParty gem for fetching raw data from website
-- Run `gem install nokogiri` to install Nokogiri for parsing data from website
-- Next, run `gem install byebug` to install Byebug for debugging purposes
+- Run the `bundle install` command to install all the gems in the Gemfile
 
 ### Usage
 - Type `ruby bin/scraper.rb` in the terminal to run this weather scraper program
@@ -59,7 +56,9 @@ While still on the terminal and in the weather-scraper directory
 - If you do not request a meaningful city, the program would not return anything
 
 ### Run tests
-- Type `rspec spec/[filename]_spec.rb` to run the tests for the corresponding `lib/filename.rb` file like so `rspec spec/location_weather_spec.rb`
+There are two options:
+1. Run all tests simply by typing `rspec` or
+2. Run test for individual files by typing `rspec spec/[filename]_spec.rb` to run the tests for the corresponding `lib/filename.rb` file like so: `rspec spec/location_weather_spec.rb`
 
 ## Author
 

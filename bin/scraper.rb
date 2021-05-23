@@ -1,6 +1,5 @@
 # rubocop: disable Metrics/MethodLength
 
-require_relative '../lib/parsers'
 require_relative '../lib/location_weather'
 require_relative '../lib/cities_near_location'
 
@@ -31,7 +30,7 @@ def my_scraper
   puts nearby_cities.parsed_page.css('h3.nearest-other-header').text << "\n"
   nearby_cities.other_cities_name.each do |i|
     puts "#{nearby_cities.other_cities_table_header[0].text}: #{i.text}"
-    nearby_cities.other_cities_table_header[1..-1].each do |x|
+    nearby_cities.other_cities_table_header[1..].each do |x|
       puts "#{x.text}: #{nearby_cities.other_cities_weather_data[s].text}"
       s += 1
     end

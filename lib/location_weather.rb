@@ -13,6 +13,7 @@ class LocationWeather < Parsers
   end
 
   private
+  
   def create_city_weather
     the_city_weathers = parsed_page.css('td.b-forecast__table-description-cell--js')
     the_city_weathers.each do |the_city_weather|

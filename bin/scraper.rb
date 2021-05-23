@@ -7,7 +7,11 @@ def my_scraper
   begin
     puts "Put in the city you'd like to find its weather forecast"
     the_city = gets.chomp
-    raise StandardError, the_city if the_city == ''
+    if the_city == ''
+      raise StandardError, the_city
+    elsif the_city.include?(" ")
+      the_city = the_city.gsub(" ", "-")
+    end
   rescue StandardError
     puts 'City cannot be empty'
     retry

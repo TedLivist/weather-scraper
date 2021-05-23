@@ -27,7 +27,7 @@ describe LocationWeather do
 
     context 'when information about city cannot be retrieved' do
       it 'weathers array is empty' do
-        expect(some_instance.weathers.count).to eql(4)
+        expect(some_instance.weathers.count).to eql(0)
       end
     end
   end

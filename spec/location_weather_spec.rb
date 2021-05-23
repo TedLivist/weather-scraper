@@ -11,6 +11,12 @@ describe LocationWeather do
   end
 
   describe '#add_city_weather' do
+    context 'when not run' do
+      it 'weathers array is empty' do
+        expect(new_instance.weathers.count).to eql(0)
+      end
+    end
+
     context 'when run' do
       it 'adds items to array' do
         new_instance.add_city_weather

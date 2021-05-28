@@ -21,7 +21,7 @@ class LocationWeather < Parsers
         weather_title: the_city_weather.css('div.b-forecast__table-description-title').text,
         weather_description: the_city_weather.css('span.phrase').text
       }
-      weathers << weather
+      @weathers << weather
     end
   end
 end

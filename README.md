@@ -12,11 +12,11 @@ As indicated above, when the program is run it prompts the user to put in a desi
 
 ![screenshot](./assets/images/city-forecast.jpg)
 
-After the user's city has been correctly retrieved, the next display shows a list-like forecast of the user's desired city with a heading like `Abuja Weather Forecast`. It comes in four(4) sub-headings: `1 - 3 days` which includes the day of the request, `4 - 7 days`, `7 - 10 days` and `10 - 12 days` - with each containing some description of what the weather forecast is for the period.
+After the user's city has been correctly retrieved, the next display shows a list-like forecast of the user's desired city with a heading like `Abuja Weather Forecast`. It comes in four(4) sub-headings: `1 - 3 days` which includes the day of the request, `4 - 7 days`, `7 - 10 days` and `10 - 12 days` - with each containing some description of what the weather forecast for that period is.
 
 ![screenshot](./assets/images/other-cities-forecast.jpg)
 
-Scrolling down further, weather forecast for five(5) cities near the user's city can be found too. In this case, for example, the five cities are Keffi, Nasarawa, Kachia, Kafachan and Minna. Now, each city contains sub-heading of the days intervals and a rather brief summary of the weather forecast for each interval.
+Scrolling down further, weather forecast for five(5) cities near the user's city can be found too. In this case, for example, the five cities are `Keffi`, `Nasarawa`, `Kachia`, `Kafachan` and `Minna`. Now, each city contains sub-heading of the days intervals and a rather brief summary of the weather forecast for each interval.
 
 ## Built With
 

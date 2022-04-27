@@ -23,6 +23,12 @@ Scrolling down further, weather forecast for five(5) cities near the user's city
 - Major language: Ruby
 - Important Gems: HTTParty, Nokogiri
 
+## Live Demo
+
+**Visit the link below and click the green `Run` button to run the app** <br />
+
+### [Live link](https://replit.com/@iamxted/weather-scraper)
+
 ## Getting Started
 
 ### Prerequisites
